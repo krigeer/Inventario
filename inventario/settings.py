@@ -116,17 +116,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-# BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [ BASE_DIR / 'static']
-
-
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = Path(__file__).resolve().parent.parent
+# Rutas estáticas
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Producción
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
