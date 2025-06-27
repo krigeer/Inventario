@@ -1,9 +1,21 @@
 {
   "builds": [
-    { "src": "inventario/wsgi.py", "use": "@vercel/python" }
+    {
+      "src": "inventario/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "postBuildCommand": "bash vercel_build.sh"
+      }
+    }
   ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)",         "dest": "inventario/wsgi.py" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "inventario/wsgi.py"
+    }
   ]
 }
