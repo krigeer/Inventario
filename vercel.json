@@ -10,6 +10,6 @@
   ],
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "inventario/wsgi.py" }
+    { "src": "/(.*)", "dest": "tu_proyecto/wsgi.py" }
   ]
 }
