@@ -4,7 +4,7 @@
       "src": "inventario/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "postBuildCommand": "bash vercel_build.sh"
+        "postBuildCommand": "python manage.py collectstatic --noinput"
       }
     }
   ],
@@ -19,4 +19,3 @@
     }
   ]
 }
-
